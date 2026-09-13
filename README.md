@@ -49,10 +49,12 @@ public class Singleton {
 Cloning: If a Singleton implements Cloneable, clone() can create another object and break Singleton.
 A class-based Singleton should prevent this by overriding clone() and throwing CloneNotSupportedException.
 
- @Override
+
+     @Override
     protected Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("Singleton cannot be cloned");
     }
+
     
 Interview point
 Singleton	Reflection	Cloning
