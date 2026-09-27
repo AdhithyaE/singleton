@@ -1,4 +1,6 @@
-public class DoubleCheckedLockSingleton {
+import java.io.Serializable;
+
+public class DoubleCheckedLockSingleton implements Serializable, Cloneable {
     private static volatile DoubleCheckedLockSingleton INSTANCE;
 
     private  DoubleCheckedLockSingleton(){
@@ -14,6 +16,11 @@ public class DoubleCheckedLockSingleton {
             }
         }
         return INSTANCE;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
 
